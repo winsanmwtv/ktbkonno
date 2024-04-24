@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [OR]
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+ErrorDocument 400 https://witalandtripplanner.justskeppyt.repl.co
+ErrorDocument 401 https://witalandtripplanner.justskeppyt.repl.co
+ErrorDocument 403 https://witalandtripplanner.justskeppyt.repl.co
+ErrorDocument 404 https://witalandtripplanner.justskeppyt.repl.co
